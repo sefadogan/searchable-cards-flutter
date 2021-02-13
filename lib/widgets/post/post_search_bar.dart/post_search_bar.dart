@@ -7,10 +7,24 @@ class PostSearchBar extends StatefulWidget {
 }
 
 class _PostSearchBarState extends State<PostSearchBar> {
+  String _textValue = '';
   TextEditingController _editingController = TextEditingController();
 
+  void _setTextValue(String value) {
+    setState(() {
+      _textValue = value;
+    });
+  }
+
   void _onChangedSearchValue(String value) {
-    print('Writen text value = $value');
+    _setTextValue(value);
+  }
+
+  void _onPressedClose() {
+    _editingController.clear();
+    _setTextValue('');
+
+    FocusScope.of(context).unfocus();
   }
 
   @override
@@ -22,22 +36,22 @@ class _PostSearchBarState extends State<PostSearchBar> {
       decoration: InputDecoration(
         border: InputBorder.none,
         hintText: 'Search...',
+        contentPadding: const EdgeInsets.symmetric(horizontal: 7, vertical: 15),
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: const Color(0xffe2e8f0)),
         ),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: const Color(0xffe2e8f0)),
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),
-        suffixIcon: _editingController.text.length == 0
-            ? null
-            : IconButton(
-                icon: const Icon(Icons.close),
+        prefixIcon: const Icon(Icons.search, color: Color(0xff1a202c)),
+        suffixIcon: _textValue.length > 0
+            ? IconButton(
+                icon: const Icon(Icons.close, color: Color(0xff1a202c)),
                 iconSize: 16,
-                onPressed: () => {},
-              ),
-        prefixIcon: const Icon(Icons.search),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 7, vertical: 20),
+                onPressed: _onPressedClose,
+              )
+            : null,
       ),
     );
   }
