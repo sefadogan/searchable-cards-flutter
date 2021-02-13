@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 // Models
 import 'package:SearchableCards/models/post/post_model.dart';
 // Widgets
-import 'package:SearchableCards/widgets/post_card/post_card.dart';
 import 'package:SearchableCards/widgets/shared/scf_text/scf_text.dart';
+import 'package:SearchableCards/widgets/post/post_cards_list/post_cards_list.dart';
 // Dummy Data
 import 'package:SearchableCards/dummy_data.dart';
 
@@ -18,8 +18,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<PostModel> _posts = PostModel.listFromJson(DummyData.posts);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,12 +32,7 @@ class _HomePageState extends State<HomePage> {
         physics: BouncingScrollPhysics(),
         child: Column(
           children: [
-            ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: _posts.length,
-              itemBuilder: (BuildContext context, int idx) => PostCard(post: _posts[idx]),
-            ),
+            PostCardsList(posts: PostModel.listFromJson(DummyData.posts)),
           ],
         ),
       ),
