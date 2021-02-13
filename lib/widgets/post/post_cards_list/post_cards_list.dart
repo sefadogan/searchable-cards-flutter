@@ -16,7 +16,12 @@ class PostCardsList extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: posts.length,
-      itemBuilder: (BuildContext context, int idx) => PostCard(post: posts[idx]),
+      itemBuilder: (BuildContext context, int idx) {
+        return Container(
+          margin: const EdgeInsets.symmetric(vertical: 6),
+          child: PostCard(post: posts[idx]),
+        );
+      },
     );
   }
 }
