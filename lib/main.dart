@@ -1,8 +1,8 @@
 // Packages
 import 'package:flutter/material.dart';
 // Routes
-import 'routes/custom_router.dart';
-import 'routes/route_names.dart';
+import 'package:SearchableCards/routes/custom_router.dart';
+import 'package:SearchableCards/routes/route_names.dart';
 
 void main() {
   runApp(MyApp());

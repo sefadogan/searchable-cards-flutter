@@ -1,7 +1,7 @@
 // Packages
 import 'package:flutter/material.dart';
 // Widgets
-import '../../widgets/shared/ScfText/ScfText.dart';
+import 'package:SearchableCards/widgets/shared/scf_text/scf_text.dart';
 
 class NotFoundPage extends StatelessWidget {
   @override

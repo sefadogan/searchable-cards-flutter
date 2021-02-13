@@ -1,14 +1,14 @@
 // Packages
 import 'package:flutter/material.dart';
 // Pages
-import '../pages/home/home_page.dart';
-import '../pages/error/not_found_page.dart';
+import 'package:SearchableCards/pages/error/not_found_page.dart';
+import 'package:SearchableCards/pages/home/home_page.dart';
 // Routes
-import 'route_names.dart';
+import 'package:SearchableCards/routes/route_names.dart';
 
 class CustomRouter {
   static Route<dynamic> allRoutes(RouteSettings settings) {
-    final arguments = settings.arguments;
+    // final arguments = settings.arguments;
 
     switch (settings.name) {
       case RouteNames.home:
