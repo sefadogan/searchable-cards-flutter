@@ -6,5 +6,6 @@ AppState appReducer(AppState state, dynamic action) {
   return AppState(
     posts: postsReducer(state.posts, action),
     postSearchText: postSearchTextReducer(state.postSearchText, action),
+    users: usersReducer(state.users, action),
   );
 }
