@@ -1,10 +1,10 @@
 // Packages
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 // Models
 import 'package:SearchableCards/models/post/post_model.dart';
 // Widgets
-import 'package:SearchableCards/widgets/shared/scf_text/scf_text.dart';
-import 'package:flutter_redux/flutter_redux.dart';
+import 'package:SearchableCards/widgets/shared/controlled_text/controlled_text.dart';
 // Helpers
 import 'package:SearchableCards/common/helpers/user_helper.dart';
 // State
@@ -33,18 +33,18 @@ class PostCard extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.only(bottom: 10),
-                child: ScfText(post.title),
+                child: ControlledText(post.title),
               ),
               Container(
                 padding: const EdgeInsets.symmetric(vertical: 10),
-                child: ScfText(post.body, maxLines: 3),
+                child: ControlledText(post.body, maxLines: 3),
               ),
               Container(
                 padding: const EdgeInsets.only(top: 10),
                 child: Row(
                   children: [
                     const Icon(Icons.person),
-                    ScfText(user.name),
+                    ControlledText(user.name),
                   ],
                 ),
               ),

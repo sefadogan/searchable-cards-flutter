@@ -1,7 +1,7 @@
 // Packages
 import 'package:flutter/material.dart';
 // Widgets
-import 'package:SearchableCards/widgets/shared/scf_text/scf_text.dart';
+import 'package:SearchableCards/widgets/shared/controlled_text/controlled_text.dart';
 import 'package:SearchableCards/widgets/post/post_cards_list/post_cards_list.dart';
 import 'package:SearchableCards/widgets/post/post_search_bar.dart/post_search_bar.dart';
 // Dummy Data
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: ScfText("Searchable Cards"),
+        title: ControlledText("Searchable Cards"),
         centerTitle: true,
         backgroundColor: Colors.amber,
         brightness: Brightness.light,
@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                     PostSearchBar(),
                     Container(
                       padding: const EdgeInsets.only(top: 20, bottom: 6),
-                      child: ScfText(
+                      child: ControlledText(
                         "POSTS",
                         style: contentDividerTitleTextStyle(),
                       ),

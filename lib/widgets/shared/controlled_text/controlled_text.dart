@@ -1,14 +1,14 @@
 // Packages
 import 'package:flutter/material.dart';
 
-class ScfText extends StatelessWidget {
+class ControlledText extends StatelessWidget {
   final String text;
   final TextStyle style;
   final TextOverflow overflow;
   final int maxLines;
   final TextAlign textAlign;
 
-  ScfText(
+  ControlledText(
     this.text, {
     this.style,
     this.overflow = TextOverflow.ellipsis,
