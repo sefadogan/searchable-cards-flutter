@@ -19,10 +19,20 @@ class PostCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ScfText(post.title),
-          ScfText(post.body),
-          ScfText(post.userId.toString()),
+          Container(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: ScfText(post.title),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: ScfText(post.body, maxLines: 3),
+          ),
+          Container(
+            padding: const EdgeInsets.only(top: 10),
+            child: ScfText(post.userId.toString()),
+          ),
         ],
       ),
     );

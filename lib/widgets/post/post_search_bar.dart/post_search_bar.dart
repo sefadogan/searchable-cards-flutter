@@ -7,8 +7,8 @@ class PostSearchBar extends StatefulWidget {
 }
 
 class _PostSearchBarState extends State<PostSearchBar> {
-  String _textValue = '';
   TextEditingController _editingController = TextEditingController();
+  String _textValue = '';
 
   void _setTextValue(String value) {
     setState(() {

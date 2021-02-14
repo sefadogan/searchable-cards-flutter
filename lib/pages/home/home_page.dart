@@ -1,19 +1,14 @@
 // Packages
+import 'package:SearchableCards/state/redux/app_state.dart';
 import 'package:flutter/material.dart';
-// Models
-import 'package:SearchableCards/models/post/post_model.dart';
 // Widgets
 import 'package:SearchableCards/widgets/shared/scf_text/scf_text.dart';
 import 'package:SearchableCards/widgets/post/post_cards_list/post_cards_list.dart';
 import 'package:SearchableCards/widgets/post/post_search_bar.dart/post_search_bar.dart';
 // Dummy Data
-import 'package:SearchableCards/dummy_data.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -29,17 +24,22 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.amber,
         brightness: Brightness.light,
       ),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-          child: Column(
-            children: [
-              PostSearchBar(),
-              PostCardsList(posts: PostModel.listFromJson(DummyData.posts)),
-            ],
-          ),
-        ),
+      body: StoreConnector<AppState, AppState>(
+        converter: (store) => store.state,
+        builder: (context, state) {
+          return SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              child: Column(
+                children: [
+                  PostSearchBar(),
+                  PostCardsList(),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
