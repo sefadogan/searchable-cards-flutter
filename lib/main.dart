@@ -30,7 +30,6 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Searchable Cards',
-            theme: ThemeData(fontFamily: 'Quicksand', visualDensity: VisualDensity.adaptivePlatformDensity),
             onGenerateRoute: CustomRouter.allRoutes,
             initialRoute: RouteNames.home,
           );
