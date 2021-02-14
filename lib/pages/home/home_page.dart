@@ -1,5 +1,4 @@
 // Packages
-import 'package:SearchableCards/state/redux/app_state.dart';
 import 'package:flutter/material.dart';
 // Widgets
 import 'package:SearchableCards/widgets/shared/scf_text/scf_text.dart';
@@ -7,6 +6,8 @@ import 'package:SearchableCards/widgets/post/post_cards_list/post_cards_list.dar
 import 'package:SearchableCards/widgets/post/post_search_bar.dart/post_search_bar.dart';
 // Dummy Data
 import 'package:flutter_redux/flutter_redux.dart';
+// State
+import 'package:SearchableCards/state/redux/app_state.dart';
 
 class HomePage extends StatefulWidget {
   @override

@@ -7,16 +7,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:SearchableCards/state/redux/app_state.dart';
 
 class PostCardsList extends StatelessWidget {
-  // List<PostModel> getFilteredPosts() {
-  //   final String textValue = _editingController.text;
-
-  //   if (textValue.length == 0) {
-  //     return _posts;
-  //   }
-
-  //   return _posts.where((post) => post.title.contains(textValue) || post.body.contains(textValue)).toList();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, AppState>(
