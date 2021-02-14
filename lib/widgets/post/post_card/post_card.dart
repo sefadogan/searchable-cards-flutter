@@ -41,7 +41,12 @@ class PostCard extends StatelessWidget {
               ),
               Container(
                 padding: const EdgeInsets.only(top: 10),
-                child: ScfText(user.name),
+                child: Row(
+                  children: [
+                    const Icon(Icons.person),
+                    ScfText(user.name),
+                  ],
+                ),
               ),
             ],
           ),

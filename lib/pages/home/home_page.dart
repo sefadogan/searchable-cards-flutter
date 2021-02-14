@@ -8,6 +8,8 @@ import 'package:SearchableCards/widgets/post/post_search_bar.dart/post_search_ba
 import 'package:flutter_redux/flutter_redux.dart';
 // State
 import 'package:SearchableCards/state/redux/app_state.dart';
+// Styles
+import 'package:SearchableCards/styles/styles.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -36,6 +38,13 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   PostSearchBar(),
+                  Container(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: ScfText(
+                      "POSTS",
+                      style: contentDividerTitleTextStyle(),
+                    ),
+                  ),
                   PostCardsList(),
                 ],
               ),
