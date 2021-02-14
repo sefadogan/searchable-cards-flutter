@@ -30,23 +30,26 @@ class _HomePageState extends State<HomePage> {
       body: StoreConnector<AppState, AppState>(
         converter: (store) => store.state,
         builder: (context, state) {
-          return SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  PostSearchBar(),
-                  Container(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: ScfText(
-                      "POSTS",
-                      style: contentDividerTitleTextStyle(),
+          return GestureDetector(
+            onTap: () => FocusScope.of(context).unfocus(),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    PostSearchBar(),
+                    Container(
+                      padding: const EdgeInsets.only(top: 20, bottom: 6),
+                      child: ScfText(
+                        "POSTS",
+                        style: contentDividerTitleTextStyle(),
+                      ),
                     ),
-                  ),
-                  PostCardsList(),
-                ],
+                    PostCardsList(),
+                  ],
+                ),
               ),
             ),
           );

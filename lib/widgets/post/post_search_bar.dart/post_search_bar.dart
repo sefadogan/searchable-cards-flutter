@@ -8,8 +8,6 @@ import 'package:SearchableCards/models/post/post_model.dart';
 // State
 import 'package:SearchableCards/state/redux/actions.dart';
 import 'package:SearchableCards/state/redux/app_state.dart';
-// Helpers
-import 'package:SearchableCards/common/helpers/post_helper.dart';
 
 class PostSearchBar extends StatefulWidget {
   @override
