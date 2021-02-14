@@ -1,11 +1,10 @@
 // Packages
-import 'package:SearchableCards/state/redux/app_state.dart';
 import 'package:flutter/material.dart';
-// Models
-import 'package:SearchableCards/models/post/post_model.dart';
 // Widgets
 import 'package:SearchableCards/widgets/post/post_card/post_card.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+// State
+import 'package:SearchableCards/state/redux/app_state.dart';
 
 class PostCardsList extends StatelessWidget {
   // List<PostModel> getFilteredPosts() {
