@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: ControlledText("Searchable Cards"),
+        title: ControlledText("Searchable Cards - Redux"),
         centerTitle: true,
         backgroundColor: Colors.amber,
         brightness: Brightness.light,
