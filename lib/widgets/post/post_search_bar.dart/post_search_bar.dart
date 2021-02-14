@@ -21,15 +21,15 @@ class _PostSearchBarState extends State<PostSearchBar> {
 
   void _onChangedSearchValue(String value) {
     final store = StoreProvider.of<AppState>(context);
+    final posts = PostModel.listFromJson(DummyData.posts);
 
     store.dispatch(SetPostSearchTextAction(value));
 
     if (value.length == 0) {
-      store.dispatch(SetPostsAction(PostModel.listFromJson(DummyData.posts)));
+      store.dispatch(SetPostsAction(posts));
     }
 
-    final clonedPosts = PostHelper.clonePosts(store.state.posts);
-    final filteredPosts = clonedPosts.where((post) => post.title.contains(value) || post.body.contains(value)).toList();
+    final filteredPosts = posts.where((post) => post.title.contains(value) || post.body.contains(value)).toList();
     store.dispatch(SetPostsAction(filteredPosts));
   }
 
